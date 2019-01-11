@@ -44,7 +44,8 @@
     "@loopback/core": "^1.0.1",
     "@loopback/openapi-v3": "^1.1.0",
     "@loopback/rest": "^1.2.0",
-    "@loopback/service-proxy": "^1.0.1"
+    "@loopback/service-proxy": "^1.0.1",
+    "sqlite3": "^4.0.4"
   },
   "devDependencies": {
     "@loopback/build": "^1.0.1",

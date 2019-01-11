@@ -22,7 +22,7 @@ export class PlantController {
     },
   })
   async find(): Promise<Plant[]> {
-    return [];
+    return this.plantRepository.find();
   }
 
   @post('/plants', {
@@ -40,6 +40,7 @@ export class PlantController {
     },
   })
   async create(@requestBody() plant: Plant): Promise<Plant> {
-    return plant;
+    const plantEntity = this.plantRepository.create(plant);
+    return this.plantRepository.save(plantEntity);
   }
 }
