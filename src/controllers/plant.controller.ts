@@ -1,11 +1,18 @@
 import {get, requestBody, post} from '@loopback/rest';
-import {repository} from 'loopback4-typeorm';
+import {repository} from 'loopback-4-typeorm';
 
 import {Plant} from '../models';
 import {PlantRepository} from '../repositories';
 
 export class PlantController {
-  constructor(@repository(Plant) private plantRepository: PlantRepository) {}
+  constructor(
+    /**
+     * Here we inject our TypeORM repository into controller.
+     * API is the same as the default repository except we use
+     * `loopback-4-typeorm` repository decorator.
+     */
+    @repository(Plant) private plantRepository: PlantRepository,
+  ) {}
 
   @get('/plants', {
     operationId: 'getPlants',

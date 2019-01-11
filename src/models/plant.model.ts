@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column} from 'loopback4-typeorm';
+import {Entity, PrimaryGeneratedColumn, Column} from 'loopback-4-typeorm';
 import {property, model} from '@loopback/repository';
 
 @model()
@@ -8,7 +8,7 @@ export class Plant {
   @property({type: 'number', id: true})
   id: number;
 
-  @Column()
+  @Column({unique: true})
   @property({type: 'string', required: true})
   name: string;
 

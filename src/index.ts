@@ -1,5 +1,6 @@
 import {LoopbackPlaygroundApplication} from './application';
 import {ApplicationConfig} from '@loopback/core';
+import {RestServer} from '@loopback/rest';
 
 export {LoopbackPlaygroundApplication};
 
@@ -8,11 +9,11 @@ export async function main(options: ApplicationConfig = {}) {
   await app.bootTypeOrm();
   await app.boot();
 
-  const url = app.restServer.url;
-  console.log(`Server is running at ${url}`);
-  console.log(`Try ${url}/ping`);
-
   await app.start();
+
+  const rest = await app.getServer<RestServer>(RestServer);
+  console.log(`Server is running at ${rest.url}`);
+  console.log(`Try ${rest.url}/ping`);
 
   return app;
 }

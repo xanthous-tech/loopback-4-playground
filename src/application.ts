@@ -3,7 +3,7 @@ import {BootMixin} from '@loopback/boot';
 import {ApplicationConfig} from '@loopback/core';
 import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
-import {TypeORMBootMixin} from 'loopback4-typeorm';
+import {TypeORMBootMixin} from 'loopback-4-typeorm';
 
 import {RestSequence} from './sequence';
 import {ormconfig} from './configuration';

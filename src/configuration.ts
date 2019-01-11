@@ -1,4 +1,4 @@
-import {ConnectionOptions} from 'loopback4-typeorm';
+import {ConnectionOptions} from 'loopback-4-typeorm';
 
 export const ormconfig: ConnectionOptions = {
   name: 'default',

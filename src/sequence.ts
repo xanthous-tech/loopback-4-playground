@@ -8,6 +8,10 @@ import {
   RestBindings,
   Send,
   SequenceHandler,
+  RouteEntry,
+  OperationArgs,
+  OperationRetval,
+  HttpErrors,
 } from '@loopback/rest';
 
 const SequenceActions = RestBindings.SequenceActions;
@@ -26,10 +30,33 @@ export class RestSequence implements SequenceHandler {
       const {request, response} = context;
       const route = this.findRoute(request);
       const args = await this.parseParams(request, route);
-      const result = await this.invoke(route, args);
+      const result = await this.invokeWithErrorHandler(route, args);
       this.send(response, result);
     } catch (err) {
       this.reject(context, err);
+    }
+  }
+
+  /**
+   * Catch application errors and map them to HttpError here.
+   * This is useful for frontend to make sense of the error.
+   */
+  async invokeWithErrorHandler(
+    route: RouteEntry,
+    args: OperationArgs,
+  ): Promise<OperationRetval> {
+    try {
+      return await this.invoke(route, args);
+    } catch (error) {
+      if (error.name === 'EntityNotFound') {
+        error = new HttpErrors.NotFound(error.message);
+      }
+
+      if (error.code === 'SQLITE_CONSTRAINT') {
+        error = new HttpErrors.Conflict(error.message);
+      }
+
+      throw error;
     }
   }
 }
