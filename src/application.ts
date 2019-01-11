@@ -24,7 +24,13 @@ export class LoopbackPlaygroundApplication extends BootMixin(
     // Customize @loopback/boot Booter Conventions here
     this.bootOptions = {
       typeorm: {
+        /**
+         * Pass ormconfig here.
+         */
         ormconfig,
+        /**
+         * Show models directory to typeorm boot mixin.
+         */
         modelsDir: 'src/models',
       },
       controllers: {
