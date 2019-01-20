@@ -45,6 +45,7 @@
     "@loopback/openapi-v3": "^1.1.0",
     "@loopback/rest": "^1.2.0",
     "@loopback/service-proxy": "^1.0.1",
+    "loopback-4-accesscontrol": "^1.0.0",
     "loopback-4-typeorm": "^0.5.1",
     "sqlite3": "^4.0.4"
   },
