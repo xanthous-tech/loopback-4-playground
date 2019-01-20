@@ -1,96 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Playground for new ideas</title>
 
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="//v4.loopback.io/favicon.ico"
-    />
+<head>
+  <title>Playground for new ideas</title>
 
-    <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-      }
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/x-icon" href="//v4.loopback.io/favicon.ico" />
 
-      h3 {
-        margin-left: 25px;
-        text-align: center;
-      }
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-      a,
-      a:visited {
-        color: #3f5dff;
-      }
+    h3 {
+      margin-left: 25px;
+      text-align: center;
+    }
 
-      h3 a {
-        margin-left: 10px;
-      }
+    a,
+    a:visited {
+      color: #3f5dff;
+    }
 
-      a:hover,
-      a:focus,
-      a:active {
-        color: #001956;
-      }
+    h3 a {
+      margin-left: 10px;
+    }
 
-      .power {
-        position: absolute;
-        bottom: 25px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+    a:hover,
+    a:focus,
+    a:active {
+      color: #001956;
+    }
 
-      .info {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+    .power {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-      .info h1 {
-        text-align: center;
-        margin-bottom: 0;
-      }
+    .info {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
-      .info p {
-        text-align: center;
-        margin-bottom: 3em;
-        margin-top: 1em;
-      }
-    </style>
-  </head>
+    .info h1 {
+      text-align: center;
+      margin-bottom: 0;
+    }
 
-  <body>
-    <div class="info">
-      <a href="https://x-tech.io"><img src="/logo.svg" alt="logo"/></a>
-      <h1>Loopback Playground</h1>
-      <p>Version 1.0.0</p>
+    .info p {
+      text-align: center;
+      margin-bottom: 3em;
+      margin-top: 1em;
+    }
+  </style>
+</head>
 
-      <h3>OpenAPI spec: <a href="/openapi.json">/openapi.json</a></h3>
-      <h3>API Explorer: <a href="/explorer">/explorer</a></h3>
-      <br />
-      <h3>
-        TypeORM Extension:
-        <a href="https://github.com/xanthous-tech/loopback-4-typeorm">Github</a>
-      </h3>
-      <h3>
-        Access Control Extension:
-        <a href="https://github.com/xanthous-tech/loopback-4-accesscontrol"
-          >Github</a
-        >
-      </h3>
-    </div>
+<body>
+  <div class="info">
+    <a href="https://x-tech.io"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0i5Zu+5bGCXzEiIGRhdGEtbmFtZT0i5Zu+5bGCIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEzNDEuNDIgMjUyLjIiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMDAwZjI4O30uY2xzLTJ7ZmlsbDojNGU5Y2M1O30uY2xzLTN7ZmlsbDojMDAxZDNhO30uY2xzLTQsLmNscy02e2ZpbGw6I2ZmY2UyNzt9LmNscy01e2ZpbGw6IzYwYTdkMTt9LmNscy01LC5jbHMtNiwuY2xzLTd7b3BhY2l0eTowLjY7fS5jbHMtN3tmaWxsOiMwMzFmMzQ7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT7mnKrmoIfpopgtMTwvdGl0bGU+PHBvbHlnb24gY2xhc3M9ImNscy0xIiBwb2ludHM9IjQ4My44MSA1MS42NSA0MjguOSAxMTAuNTUgNDMwLjU5IDUxLjY1IDQwMy4zNCA1MS42NSA0MDMuMjEgMTM0LjE4IDMxMS40MiAyMjkuNTggMzQyLjI2IDIyOS41OCA0MDUuMTQgMTYyLjUxIDQwMy4zNSAyMjkuNTggNDMxLjA3IDIyOS41OCA0MzEuMTYgMTM4LjI1IDUxNC4xNSA1MS42NSA0ODMuODEgNTEuNjUiLz48cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNzI4LjQ2IDUxLjY1IDY2OS40MyAxNzQuMDcgNjc3LjUzIDUxLjY1IDY0OC43NyA1MS42NSA1NjIuOTcgMjI5LjU4IDU4OS4yMyAyMjkuNTggNjQ4LjMyIDEwNy4wNCA2NDAuNDcgMjI5LjU4IDY2OC40NSAyMjkuNTggNzU0LjI1IDUxLjY1IDcyOC40NiA1MS42NSIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI4NDMuNCA3NS40NCA4NTQuODcgNTEuNjUgNzYyLjk1IDUxLjY1IDc1MS40OCA3NS40NCA3ODMuODMgNzUuNDQgNzA5LjUgMjI5LjU4IDczNi40OCAyMjkuNTggODEwLjgxIDc1LjQ0IDg0My40IDc1LjQ0Ii8+PHBvbHlnb24gY2xhc3M9ImNscy0xIiBwb2ludHM9Ijk1Ni4wNSAyMy44MyA5MDkuMTMgMTI1LjM5IDg1NS4yMyAxMjUuMzkgODYyLjMyIDEwOS45MiA4NDQuMjMgOTEuNzggODM3LjYzIDEwNi4wMyA3ODAuMjIgMjMwLjA1IDc5Ny4xOCAyNTIuMiA4NDMuNTMgMTQ5LjY1IDg5Ny40MyAxNDkuNjUgODkwLjU5IDE2My44NCA5MDkuNDggMTc4LjgzIDk3MC4zNCA1MC45NyA5NTYuMDUgMjMuODMiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMTA5LjM1LDEzN2MyLjgzLTExLjQsMy43LTIxLjM3LDIuNTctMjkuNjItMS4yLTguOC00LjY0LTE1LjgyLTEwLjIzLTIwLjg1cy0xMy41MS03LjY1LTIzLjQtNy42NWE2Ny4xNSw2Ny4xNSwwLDAsMC0yOS4wNiw2Ljg5LDExNCwxMTQsMCwwLDAtMjcuMjksMTguNzNBMTc2LDE3NiwwLDAsMCw5OTcsMTMzLjA5YTI1NC4xOCwyNTQuMTgsMCwwLDAtMjEuMzYsMzYuNDljLTYuNDYsMTMuNC0xMS4xNCwyNS44NC0xMy45LDM3LTIuODQsMTEuNDEtMy42OCwyMS40Mi0yLjUxLDI5Ljc2LDEuMjQsOC44OCw0Ljc2LDE1Ljk0LDEwLjQ0LDIxczEzLjYxLDcuNjIsMjMuNDksNy42MmE2NS40Miw2NS40MiwwLDAsMCwyOC40OC02LjksMTE0Ljc1LDExNC43NSwwLDAsMCwyNy4yMi0xOC44NSwxODMuMjYsMTgzLjI2LDAsMCwwLDI1LjA4LTI4LjcsMjQ4LjMzLDI0OC4zMywwLDAsMCwyMS42LTM2Ljc0QTE5My40MiwxOTMuNDIsMCwwLDAsMTEwOS4zNSwxMzdabS0yOC42MSw0LjczYTE5Ny42OSwxOTcuNjksMCwwLDEtMTEuMTEsMjcuODYsMjQxLjY4LDI0MS42OCwwLDAsMS0xNS44MywyOEExNjEuMjcsMTYxLjI3LDAsMCwxLDEwMzYsMjIwLjIxYTg0Ljc4LDg0Ljc4LDAsMCwxLTE4LjQxLDE0Ljg4Yy01LjgzLDMuMzYtMTEuNTYsNS4wNy0xNyw1LjA3LTUsMC04LjQ1LTEuMjgtMTAuNTItMy45LTIuMy0yLjkyLTMuNDUtNy4yLTMuNDItMTIuNzMsMC02LjE3LDEuMzUtMTMuNTYsMy45LTIyYTE5Ny4wNSwxOTcuMDUsMCwwLDEsMTEuMTItMjcuODYsMjM5LjIsMjM5LjIsMCwwLDEsMTUuODMtMjgsMTU0LjIsMTU0LjIsMCwwLDEsMTcuNy0yMi4zOCw4NC4zOCw4NC4zOCwwLDAsMSwxOC40MS0xNC42NSwzNS4yNCwzNS4yNCwwLDAsMSwxNy40MS01LjA4YzQuNjYsMCw3LjksMS4yNiw5Ljg5LDMuODUsMi4yNywzLDMuNDcsNy4yMiwzLjU3LDEyLjY1QzEwODQuNTEsMTI2LjA5LDEwODMuMjgsMTMzLjM2LDEwODAuNzQsMTQxLjcyWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI0LjcxIC0zNS4yNykiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMjY0Ljk0LDgyLjkxaC0yNy4yMWwtNTMsMTEwYTE4NSwxODUsMCwwLDEtOS45NCwxOEE5MSw5MSwwLDAsMSwxMTYyLjk0LDIyNmE1NC4zMSw1NC4zMSwwLDAsMS0xMy44NywxMC40LDMzLjQxLDMzLjQxLDAsMCwxLTE1LjU3LDMuNzVjLTUsMC04LjU4LTEtMTAuMjgtMi43OC0xLjg0LTItMi43Ni00LjYyLTIuNzktOC4wOWE0NC44OCw0NC44OCwwLDAsMSwyLjc0LTE0LjQ5LDE1NC43MSwxNTQuNzEsMCwwLDEsNy4zLTE3Ljc3bDU1LTExNC4xMmgtMjcuMjFMMTEwNC4yMiwxOTVhMTUzLDE1MywwLDAsMC05LjgsMjUuNDJjLTIuMyw4LjMzLTIuOTEsMTUuNzktMS44MywyMi4xN2EyNC43LDI0LjcsMCwwLDAsMTAuMTksMTYuNTFjNS40MiwzLjg4LDEzLDUuNzcsMjMuMTQsNS43N2E2OS41Nyw2OS41NywwLDAsMCwyNy01LjI1LDgyLjQ4LDgyLjQ4LDAsMCwwLDIyLjY1LTE0LjI2LDExOCwxMTgsMCwwLDAsMTguNTQtMjAuOTQsMTg0LjI3LDE4NC4yNywwLDAsMCwxNC43NS0yNS4yOFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNC43MSAtMzUuMjcpIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTM2NS4zMSw5OC42YTIzLjMsMjMuMywwLDAsMC0xMS43OC0xNS4yM2MtNS41My0zLTEyLjU4LTQuNS0yMS00LjVBNjIuMTksNjIuMTksMCwwLDAsMTMxMy44Myw4MmE3Ny41NSw3Ny41NSwwLDAsMC0xOSw5LjI0LDg5Ljg0LDg5Ljg0LDAsMCwwLTE3LjU3LDE1LjMyQTkyLjIyLDkyLjIyLDAsMCwwLDEyNjMuMTEsMTI4Yy0zLjQ0LDcuMTMtNS40NiwxMy41NS02LDE5LjA3YTMzLjk0LDMzLjk0LDAsMCwwLDEuNSwxNS4wOCwzMC45NCwzMC45NCwwLDAsMCw3LjI5LDExLjM3LDU5LjE2LDU5LjE2LDAsMCwwLDEwLjIxLDguMSw1Mi42Niw1Mi42NiwwLDAsMSw3LjE4LDUuNjUsMjAsMjAsMCwwLDEsNC40NSw2LjE3LDE2LDE2LDAsMCwxLDEuMjksNy41MiwyOS4wNywyOS4wNywwLDAsMS0zLjIzLDEwLjc4Yy00LjQ0LDkuMTktMTAuMjUsMTYuMzQtMTcuMjksMjEuMjNzLTEzLjc1LDcuMjQtMjAuMzMsNy4yNEEyMC43NywyMC43NywwLDAsMSwxMjM2LDIzNi43YTE0LjE5LDE0LjE5LDAsMCwxLTYtOS4ybC0xLjU0LTcuMTktMjQuMzYsMTcuOTEuNzksMy4xMWEyOC45MSwyOC45MSwwLDAsMCwxMi40NiwxNy4yOWM2LjIyLDQuMTcsMTQuMTksNi4yOCwyMy42Nyw2LjI4YTYxLjE1LDYxLjE1LDAsMCwwLDE5Ljc0LTMuNDcsNzguNzEsNzguNzEsMCwwLDAsMTkuMzMtOS44N0E5Mi40NCw5Mi40NCwwLDAsMCwxMjk3LjI3LDIzNmE5NC41LDk0LjUsMCwwLDAsMTMuNi0yMC45MWMzLjUzLTcuMzEsNS41My0xMy44OSw2LTE5LjU0YTMyLjYyLDMyLjYyLDAsMCwwLTIuMjktMTUuNTgsMzUuNTMsMzUuNTMsMCwwLDAtOC0xMS41NCw3My41MSw3My41MSwwLDAsMC0xMC4yMS04LjE0LDU0LjU4LDU0LjU4LDAsMCwxLTYuNzYtNS4yNSwxNS42NSwxNS42NSwwLDAsMS00LTUuNTEsMTQuOTMsMTQuOTMsMCwwLDEtMS03LDMxLjE0LDMxLjE0LDAsMCwxLDMuMzYtMTAuNjUsNTcuMSw1Ny4xLDAsMCwxLDguNDMtMTMsNTMuNSw1My41LDAsMCwxLDEwLTksMzkuMzEsMzkuMzEsMCwwLDEsMTAuMTMtNSwzMS43OSwzMS43OSwwLDAsMSw5LjMyLTEuNTcsMTkuOTEsMTkuOTEsMCwwLDEsMTAuMTcsMi4zYzIuMTQsMS4yOSwzLjUyLDMuNSw0LjIsNi43NmwxLjUxLDcuMjUsMjQuNDEtMThaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjQuNzEgLTM1LjI3KSIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI1NjQuMTkgNTEuNjUgNDMzLjE1IDIyOS41OCA0NjEuODYgMjI5LjU4IDU2MC42OSA5Mi4yMyA1MjYuMjIgMjI5LjU4IDU1My4zOCAyMjkuNTggNTk1LjIgNTEuNjUgNTY0LjE5IDUxLjY1Ii8+PHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjEzMS41NyAxMDguMzEgMTY3LjUzIDE3MC42IDE2Ny41MiAxNzAuNiAxODQuNDIgMTk5Ljg4IDE4NC42IDE5OS45OCAxODQuNTQgMjAwLjA4IDE4NC42MiAyMDAuMjIgMTg0LjM3IDIwMC4zNyAxNjcuOTkgMjI4Ljc0IDI2My41MiAyMjguNzQgMTc4LjM1IDgxLjIyIDE0Ny4yMSA4MS4yMiAxMzEuNTcgMTA4LjMxIi8+PHBvbHlnb24gY2xhc3M9ImNscy0zIiBwb2ludHM9IjY4LjIyIDE3MC40MyA2OC4wNCAxNzAuNTMgNjcuOTggMTcwLjQzIDY3LjgxIDE3MC40MyA2Ny44MSAxNzAuMTQgNTAuOCAxNDAuNjcgMCAyMjguNjYgMTY4LjU0IDIyOC42NiAxODUuMDkgMjAwIDE2OC4wNyAxNzAuNTIgNjguMjIgMTcwLjQzIi8+PHBvbHlnb24gY2xhc3M9ImNscy00IiBwb2ludHM9IjY3LjM4IDE3MC40NiA5NS40NCAxNzAuNDYgMTMxLjQ0IDEwOC4xMiAxMzEuNTIgMTA4LjI3IDE0Ny4wNSA4MS4zOCAxNDcuMDUgODEuMTggMTQ3LjE2IDgxLjE4IDE0Ny4yNSA4MS4wMyAxNDcuNSA4MS4xOCAxNzguMyA4MS4xOCAxMzEuNDQgMCA1MC4yIDE0MC43MSA2Ny4zOCAxNzAuNDYiLz48cG9seWdvbiBjbGFzcz0iY2xzLTUiIHBvaW50cz0iMTQ3LjE2IDgxLjIyIDE3OC4zIDgxLjIyIDE2Ni43IDYwLjk3IDEzNS41NiA2MC45NyAxMTkuOTIgODguMDYgMTMxLjU3IDEwOC4yMyAxNDcuMTYgODEuMjIiLz48cG9seWdvbiBjbGFzcz0iY2xzLTYiIHBvaW50cz0iNjYuNjEgMTY3LjE3IDUwLjc1IDE0MC4zNyAzOS4yMyAxNjAuNjcgNTUuMDkgMTg3LjQ3IDg2LjM4IDE4Ny4xMyA5Ny44IDE2Ni44MyA2Ni42MSAxNjcuMTciLz48cG9seWdvbiBjbGFzcz0iY2xzLTciIHBvaW50cz0iMTg0Ljc2IDE5OS41NCAxNjguMDkgMjI4LjczIDE5My4yOCAyMjguNyAyMDkuOTUgMTk5LjUxIDE5Mi45MyAxNzAuMzQgMTY3Ljc5IDE3MC40NiAxODQuNzYgMTk5LjU0Ii8+PC9zdmc+"
+        alt="logo" /></a>
+    <h1>Loopback Playground</h1>
+    <p>Version 1.0.0</p>
 
-    <footer class="power">
-      <a href="https://v4.loopback.io" target="_blank">
-        <img
-          src="https://loopback.io/images/branding/powered-by-loopback/blue/powered-by-loopback-sm.png"
-        />
-      </a>
-    </footer>
-  </body>
+    <h3>OpenAPI spec: <a href="/openapi.json">/openapi.json</a></h3>
+    <h3>API Explorer: <a href="/explorer">/explorer</a></h3>
+    <br />
+    <h3>
+      TypeORM Extension:
+      <a href="https://github.com/xanthous-tech/loopback-4-typeorm">Github</a>
+    </h3>
+    <h3>
+      Access Control Extension:
+      <a href="https://github.com/xanthous-tech/loopback-4-accesscontrol">Github</a>
+    </h3>
+  </div>
+
+  <footer class="power">
+    <a href="https://v4.loopback.io" target="_blank">
+      <img src="https://loopback.io/images/branding/powered-by-loopback/blue/powered-by-loopback-sm.png" />
+    </a>
+  </footer>
+</body>
+
 </html>
