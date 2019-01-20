@@ -7,9 +7,10 @@ import {TypeORMBootMixin} from 'loopback-4-typeorm';
 
 import {RestSequence} from './sequence';
 import {ormconfig} from './configuration';
+import {RepositoryMixin} from '@loopback/repository';
 
 export class LoopbackPlaygroundApplication extends BootMixin(
-  TypeORMBootMixin(ServiceMixin(RestApplication)),
+  TypeORMBootMixin(ServiceMixin(RepositoryMixin(RestApplication))),
 ) {
   constructor(options: ApplicationConfig = {}) {
     super(options);

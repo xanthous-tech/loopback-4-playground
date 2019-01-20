@@ -1,4 +1,5 @@
 import {get, requestBody, post} from '@loopback/rest';
+import {access} from 'loopback-4-accesscontrol';
 import {repository} from 'loopback-4-typeorm';
 
 import {Plant} from '../models';
@@ -14,6 +15,14 @@ export class PlantController {
     @repository(Plant) private plantRepository: PlantRepository,
   ) {}
 
+  /**
+   * We are defining the resource and the action thats being
+   * taken by this CRUD method.
+   */
+  @access({
+    action: 'read',
+    resource: 'plant',
+  })
   @get('/plants', {
     operationId: 'getPlants',
     description: '{getPlants} -- list all plants',
@@ -32,6 +41,10 @@ export class PlantController {
     return this.plantRepository.find();
   }
 
+  @access({
+    action: 'read',
+    resource: 'plant',
+  })
   @post('/plants', {
     operationId: 'getPlants',
     description: '{getPlants} -- list all plants',

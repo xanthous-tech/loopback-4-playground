@@ -1,4 +1,5 @@
 import {ConnectionOptions} from 'loopback-4-typeorm';
+import {AccessControlOptions} from 'loopback-4-accesscontrol';
 
 /**
  * These will change depending on the database driver you want to
@@ -14,4 +15,24 @@ export const ormconfig: ConnectionOptions = {
   entities: ['dist/src/models/*.model.js'],
   synchronize: true,
   logging: true,
+};
+
+/**
+ * Here we define the roles for access control.
+ */
+export const accesscontrol: AccessControlOptions = {
+  grants: [
+    {
+      role: 'guest',
+      action: 'read:any',
+      attributes: '*',
+      resource: 'plant',
+    },
+    {
+      role: 'admin',
+      action: 'create:any',
+      attributes: '*',
+      resource: 'plant',
+    },
+  ],
 };
